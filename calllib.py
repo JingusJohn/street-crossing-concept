@@ -3,9 +3,10 @@
 from twilio.rest import Client
 from pprint import pprint
 from time import sleep
+from keys import *
 
-account_sid = 'ACb3dfa6e8ee8a7a8f07c0c184a470b1f4'
-auth_token = 'e9c088827db31404cae51182fe4b5999'
+account_sid = get_sid()
+auth_token = get_auth()
 client = Client(account_sid, auth_token)
 
 #print(call.sid)
@@ -31,10 +32,12 @@ def make_call(srvc: str , loc):
         <Say>{msg}</Say>
     </Response>
     '''
+    tod = get_my_num()
+    fromd = get_t_num()
     call = client.calls.create(
         twiml=frmt,
-        to='+13185572743',
-        from_='+19206884198'
+        to=tod,
+        from_=fromd
     )
     # prints to confirm that the call has been placed
     print(call.sid)
