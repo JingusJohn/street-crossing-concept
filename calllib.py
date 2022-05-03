@@ -23,6 +23,7 @@ def make_call(srvc: str , loc):
         msg = f"EMT is needed at {loc}. Requesting immediate assistance"
     frmt = f'''
     <Response>
+        <Pause length="1"/>
         <Say>Guard dog</Say>
         <Pause length="1"/>
         <Say>{msg}</Say>
@@ -41,5 +42,6 @@ def make_call(srvc: str , loc):
     )
     # prints to confirm that the call has been placed
     print(call.sid)
-    
-make_call("emt", "Louisiana Tech university")
+
+def test_call():
+    make_call("emt", "Louisiana Tech university")
