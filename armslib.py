@@ -2,6 +2,7 @@
 #  the main .py file
 from gpiozero import AngularServo, Button
 from gpiozero.pins.pigpio import PiGPIOFactory
+import RPi.GPIO as gpio
 
 
 factory = PiGPIOFactory()
@@ -77,6 +78,12 @@ class Arm:
         else:
             return "down"
         
+def checkpress() -> Bool:
+    if gpio.input(self.pad1) == gpio.HIGH:
+        return True
+    elif gpio.input(self.pad2) == gpio.HIGH:
+        return True
+        
 class System:
     def __init__(self, arm1: Arm, arm2: Arm, pad1: int, pad2: int, timer):
         self.arms = [arm1, arm2]
@@ -87,20 +94,21 @@ class System:
     
     # begins process
     def run(self):
-        btn1 = Button(self.pad1)
-        btn2 = Button(self.pad2)
+        gpio.setmode(gpio.BCM)
+        gpio.setup(self.pad1, gpio.IN, pull_up_down=gpio.PUD_DOWN)
+        gpio.setup(self.pad2, gpio.IN, pull_up_down=gpio.PUD_DOWN)
         # check for pedestrians crossing and then let arms down
         # set timer for arms that will be reset each time someone attempts
         #  to cross the crosswalk
         #runtime loop
         while True:
             # check for peds
-            if btn1.is_held or btn2.is_held:
+            if checkpress():
                 timer = self.timer
                 for arm in self.arms:
                     arm.down()
                 while timer != 0:
-                    if btn1.is_held or btn2.is_held:
+                    if checkpress():
                         timer = self.timer
                     timer =- 1
                     sleep(1)
@@ -116,3 +124,4 @@ class System:
     def stop(self):
         for arm in self.arms:
             arm.up()
+        gpio.cleanup()
