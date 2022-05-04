@@ -29,7 +29,7 @@ class Gui(Frame):
                 width=26,
                 height=10,
                 bg=color[i], 
-                command=cmmds[i]).pack()
+                command=cmmds[i]).pack(side=LEFT)
         
         self.exit_button = Button(self.master, text="exit", command=self.master.destroy)
         self.exit_button.pack(side=BOTTOM)
