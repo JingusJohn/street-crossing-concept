@@ -3,6 +3,7 @@
 from gpiozero import AngularServo, Button
 from gpiozero.pins.pigpio import PiGPIOFactory
 import RPi.GPIO as gpio
+from time import sleep
 
 
 factory = PiGPIOFactory()
