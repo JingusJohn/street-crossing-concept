@@ -26,7 +26,7 @@ class Gui(Frame):
         for i, srvc in enumerate(srvcs):
             Button(self.master, 
                 text=f"Call {srvc}", 
-                width=29,
+                width=28,
                 height=10,
                 bg=color[i], 
                 command=cmmds[i]).pack(side=LEFT)
