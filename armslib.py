@@ -93,6 +93,7 @@ class System:
         self.pad1 = pad1
         self.pad2 = pad2
         self.crossing = False
+        self.just_crossed = False
     
     # begins process
     def run(self):
