@@ -14,7 +14,7 @@ from calllib import *
 o = {"90": -52, "0": 56}
 p = {"90": -25, "0": 80}
 # timer variable
-timer = 5
+timer = 10
 
 #pins for resistors
 respins = [18, 20]
