@@ -78,7 +78,7 @@ class Arm:
         else:
             return "down"
         
-def checkpress() -> Bool:
+def checkpress():
     if gpio.input(self.pad1) == gpio.HIGH:
         return True
     elif gpio.input(self.pad2) == gpio.HIGH:
