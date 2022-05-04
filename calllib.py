@@ -43,5 +43,12 @@ def make_call(srvc: str , loc):
     # prints to confirm that the call has been placed
     print(call.sid)
 
-def test_call():
+def test_call_fire():
+    make_call('fire', 'Louisiana Tech University')
+
+def test_call_pol():
+    make_call('police', 'Louisiana Tech University')
+
+def test_call_emt():
     make_call("emt", "Louisiana Tech university")
+    
