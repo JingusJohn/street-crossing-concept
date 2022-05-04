@@ -47,7 +47,7 @@ if __name__ == "__main__":
         O = Arm(Servo(16, -49, 59))
         P = Arm(Servo(12, 83, -27))
         thesys = System(O, P, 18, 20, 20)
-        sys = Thread(target=thesys.run, daemon = True)
+        sys = Thread(target=thesys.run, daemon = True).start()
         gu = Thread(target=make_gui).start()        
         
     except KeyboardInterrupt:
