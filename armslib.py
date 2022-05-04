@@ -18,14 +18,10 @@ class Servo(AngularServo):
     
     # a method that sets the angle of the servo motor to 0 degrees
     def to_zero(self):
-        self.to_middle()
-        sleep(1)
         self.angle = self.zero
         
     # a method that sets the angle of the servo motor to 90 degrees
     def to_ninety(self):
-        self.to_middle()
-        sleep(1)
         self.angle = self.ninety
         
     def to_middle(self):

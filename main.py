@@ -53,8 +53,8 @@ def make_gui():
 
 if __name__ == "__main__":
     try:
-        O = Arm(Servo(16, o["0"], o["90"]))
-        P = Arm(Servo(12, p["0"], p["90"]))
+        O = Arm(Servo(16, o["90"], o["0"]))
+        P = Arm(Servo(12, p["90"], p["0"]))
         thesys = System(O, P, 18, 20, timer)
         sys = Thread(target=thesys.run, daemon = True).start()
         gu = Thread(target=make_gui).start()        
