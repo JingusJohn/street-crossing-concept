@@ -26,10 +26,10 @@ class Gui(Frame):
         for i, srvc in enumerate(srvcs):
             Button(self.master, 
                 text=f"Call {srvc}", 
-                width=23,
+                width=26,
                 height=10,
                 bg=color[i], 
-                command=cmmds[i]).pack(side=LEFT)
+                command=cmmds[i]).pack()
         
         self.exit_button = Button(self.master, text="exit", command=self.master.destroy)
         self.exit_button.pack(side=BOTTOM)
