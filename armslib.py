@@ -58,7 +58,7 @@ class Servo(AngularServo):
 class Arm:
     def __init__(self, servo: Servo):
         self.servo = servo
-        if self.servo.angle == self.zero:
+        if self.servo.angle == self.servo.zero:
             self.is_up = True
         else:
             self.is_up = False
