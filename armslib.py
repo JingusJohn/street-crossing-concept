@@ -34,14 +34,26 @@ class Servo(AngularServo):
     @property
     def zero(self):
         return self._zero
+    
+    @zero.setter
+    def zero(self, value):
+        self._zero = value
 
     @property
     def ninety(self):
         return self._ninety
     
+    @ninety.setter
+    def ninety(self, value):
+        self._ninety = value
+    
     @property
     def middle(self):
         return self._middle
+    
+    @middle.setter
+    def middle(self, value):
+        self._middle = value
     
 class Arm:
     def __init__(self, servo: Servo):
