@@ -116,7 +116,7 @@ class System:
                 while timer != 0:
                     if checkpress():
                         timer = self.timer
-                    timer =- 1
+                    timer -= 1
                     sleep(1)
                 self.just_crossed = True
             else:
