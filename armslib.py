@@ -102,6 +102,7 @@ class System:
         #  to cross the crosswalk
         #runtime loop
         while True:
+            print("made it to while loop")
             # check for peds
             if checkpress():
                 print("pressed")
