@@ -50,7 +50,7 @@ if __name__ == "__main__":
         sys = Thread(target=thesys.run, daemon = True)
         gu = Thread(target=make_gui).start()        
         
-    except:
+    except KeyboardInterrupt:
         thesys.stop()
         sys.stop()
         gu.stop()
