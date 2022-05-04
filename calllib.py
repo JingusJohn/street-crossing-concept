@@ -51,4 +51,3 @@ def test_call_pol():
 
 def test_call_emt():
     make_call("emt", "Louisiana Tech university")
-    
