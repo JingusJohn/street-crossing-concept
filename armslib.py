@@ -99,6 +99,8 @@ class System:
     # begins process
     def run(self):
         gpio.setmode(gpio.BCM)
+        for arm in self.arms:
+            arm.up()
         gpio.setup(self.pad1, gpio.IN, pull_up_down=gpio.PUD_DOWN)
         gpio.setup(self.pad2, gpio.IN, pull_up_down=gpio.PUD_DOWN)
         # check for pedestrians crossing and then let arms down
