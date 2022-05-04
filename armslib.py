@@ -79,10 +79,12 @@ class Arm:
             return "down"
         
 def checkpress():
-    if gpio.input(self.pad1) == gpio.HIGH:
+    if gpio.input(18) == gpio.HIGH:
         return True
-    elif gpio.input(self.pad2) == gpio.HIGH:
+    elif gpio.input(20) == gpio.HIGH:
         return True
+    else:
+        return False
         
 class System:
     def __init__(self, arm1: Arm, arm2: Arm, pad1: int, pad2: int, timer):
