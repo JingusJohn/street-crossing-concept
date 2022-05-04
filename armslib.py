@@ -5,7 +5,7 @@ from gpiozero.pins.pigpio import PiGPIOFactory
 import RPi.GPIO as gpio
 from time import sleep
 
-
+respins = [18,20]
 factory = PiGPIOFactory()
 
 # Servo class inherits AngularServo
@@ -80,9 +80,9 @@ class Arm:
             return "down"
         
 def checkpress():
-    if gpio.input(18) == gpio.HIGH:
+    if gpio.input(respins[0]) == gpio.HIGH:
         return True
-    elif gpio.input(20) == gpio.HIGH:
+    elif gpio.input(respins[1]) == gpio.HIGH:
         return True
     else:
         return False
