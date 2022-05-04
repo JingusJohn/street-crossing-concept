@@ -27,7 +27,7 @@ class Servo(AngularServo):
         sleep(1)
         self.angle = self.ninety
         
-    def to_middle():
+    def to_middle(self):
         self.angle = self.middle
         
     # getters for zero and ninety
