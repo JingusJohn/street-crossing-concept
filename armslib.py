@@ -104,6 +104,7 @@ class System:
         while True:
             # check for peds
             if checkpress():
+                print("pressed")
                 timer = self.timer
                 for arm in self.arms:
                     arm.down()
@@ -113,6 +114,8 @@ class System:
                     timer =- 1
                     sleep(1)
                 self.just_crossed = True
+            else:
+                print("not pressed")
                 
             if (not self.crossing) and self.just_crossed:
                 self.just_crossed = False
