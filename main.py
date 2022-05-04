@@ -13,6 +13,8 @@ from calllib import *
 # values for O and P
 o = {"90": -52, "0": 56}
 p = {"90": -25, "0": 80}
+# timer variable
+timer = 5
 
 #pins for resistors
 respins = [18, 20]
@@ -53,7 +55,7 @@ if __name__ == "__main__":
     try:
         O = Arm(Servo(16, o["0"], o["90"]))
         P = Arm(Servo(12, p["0"], p["90"]))
-        thesys = System(O, P, 18, 20, 20)
+        thesys = System(O, P, 18, 20, timer)
         sys = Thread(target=thesys.run, daemon = True).start()
         gu = Thread(target=make_gui).start()        
         
