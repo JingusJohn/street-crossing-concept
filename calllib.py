@@ -1,7 +1,6 @@
 # library that makes context appropriate calls (Needs organizing and refactoring)
 
 from twilio.rest import Client
-from pprint import pprint
 from time import sleep
 from keys import *
 
