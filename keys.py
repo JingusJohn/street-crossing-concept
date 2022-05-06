@@ -1,3 +1,8 @@
+
+# Here, twilio API information is stored. Ideally, in the future, we'd move
+#  to using environment variables for open sourcing reasons and security
+#  reasons
+
 def get_sid():
     return 'ACb3dfa6e8ee8a7a8f07c0c184a470b1f4'
 def get_auth():

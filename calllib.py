@@ -21,6 +21,7 @@ def make_call(srvc: str , loc):
         msg = f"There is an emergency at {loc}, and the police are needed"
     elif srvc == "emt":
         msg = f"EMT is needed at {loc}. Requesting immediate assistance"
+    # formats response in TwiML 
     frmt = f'''
     <Response>
         <Pause length="1"/>
@@ -42,7 +43,7 @@ def make_call(srvc: str , loc):
     )
     # prints to confirm that the call has been placed
     print(call.sid)
-
+# test call functions for each of the services
 def test_call_fire():
     make_call('fire', 'Louisiana Tech University')
 
